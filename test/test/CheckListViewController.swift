@@ -39,7 +39,7 @@ class CheckListViewController: UITableViewController {
             label.text = "Watch iOS part 1"
         }
         else if indexPath.row % 5 == 1 {
-            label.text = "Watch Android part 1"
+            label.text = "Say hi to Sergio 😱"
         }
         else if indexPath.row % 5 == 2 {
             label.text = "Watch iOS part 2"

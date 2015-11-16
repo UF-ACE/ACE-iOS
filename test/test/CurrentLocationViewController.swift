@@ -8,15 +8,20 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var getButton: UIButton!
+    
+    // necessary to center our MapView
+    let regionRadius: CLLocationDistance = 50
+    let geocoder = CLGeocoder()
     
 //    Need this as a property for our class because the coreLocation delegate
     let locationManager = CLLocationManager()
@@ -34,6 +39,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // method to center mapview on a given location
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+            regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.showsUserLocation = true
     }
     
     /*
@@ -85,6 +98,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         lastLocationError = nil
         location = newLocation
         updateLabels()
+        centerMapOnLocation(location!)
+        placeNameFromLatLong()
     }
     
 //    This will start the location gathering
@@ -112,17 +127,34 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
 //            This is just a way to format the string to be certain way
             latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
             longitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
-            tagButton.hidden = false
-            messageLabel.text = ""
+            messageLabel.text = "CoreLocation + MapKit is awesome!😁"
+            messageLabel.sizeToFit()
         }
         else {
             latitudeLabel.text = ""
             longitudeLabel.text = ""
             addressLabel.text = ""
-            tagButton.hidden = true
             messageLabel.text = "Tap 'Get My Location' to Start"
         }
     }
+    
+    // Function to get place name like "Union Square Park" or address from lat/long coordinates
+    func placeNameFromLatLong() {
+        geocoder.reverseGeocodeLocation(location!, completionHandler: {(placemarks, error) in
+            if (error != nil) {
+                print("reverse geodcode fail: \(error!.localizedDescription)")
+            } else {
+                let placemark = placemarks! as [CLPlacemark]
+                let locationName = placemark[0].name
+                print("@@@@THE LOCATION ISSsSSSSSSS", locationName)
+                self.addressLabel.text = locationName
+                self.addressLabel.sizeToFit()
+                
+            }
+            
+        })
+    }
+
     
 }
 
