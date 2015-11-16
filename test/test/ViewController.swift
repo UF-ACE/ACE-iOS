@@ -13,10 +13,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     var currentValue: Int = 50
     
+    @IBOutlet weak var onOffButton: UISwitch!
+    
+    var duration = 1.0
+    var delay = 0.0
+    var red = UIColor.redColor()
+    var blue = UIColor.blueColor()
+    var green = UIColor.greenColor()
+    var yellow = UIColor.yellowColor()
+    var cyan = UIColor.cyanColor()
+    var options = UIViewAnimationOptions.CurveLinear
+    var size : CGFloat = 0.0
+    var xPos1 : CGFloat = 0.0
+    var xPos2 : CGFloat = 0.0
+    var yPos : CGFloat = 0.0
+    let coloredSquare = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         currentValue = lroundf(slider.value)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+//        makeSquare()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +65,53 @@ class ViewController: UIViewController {
     @IBAction func sliderMoved(slider: UISlider) {
 //        print("The value of the slider is now: \(slider.value)")
         currentValue = lroundf(slider.value)
+    }
+    
+    
+    @IBAction func onOffButtonClicked(sender: UISwitch) {
+        if (onOffButton.on == true) {
+            makeSquare()
+            moveSquare("right")
+//            onOffButton.on = false
+        }
+        if (onOffButton.on == false) {
+            self.coloredSquare.backgroundColor = self.yellow
+            moveSquare("left")
+            //            onOffButton.on = false
+        }
+    }
+    
+    func makeSquare() {
+        size = CGFloat(20)
+        xPos1 = CGFloat(0)
+        xPos2 = CGFloat(self.view.frame.width - 20)
+        yPos = CGFloat(3*(self.view.frame.height/4))
+        
+        coloredSquare.backgroundColor = self.green
+        coloredSquare.frame = CGRectMake(xPos1, yPos, size, size)
+        self.view.addSubview(coloredSquare)
+        
+    }
+    
+    func moveSquare(way: String) {
+        
+        if (way == "right") {
+            UIView.animateWithDuration(duration, animations: {
+                self.coloredSquare.backgroundColor = self.blue
+                self.coloredSquare.frame = CGRectMake(self.xPos2, self.yPos, self.size, self.size)
+                }, completion: { animationFinished in
+//                    self.coloredSquare.removeFromSuperview()
+            })
+        }
+        else if (way == "left") {
+            UIView.animateWithDuration(duration, animations: {
+                self.coloredSquare.backgroundColor = self.red
+                self.coloredSquare.frame = CGRectMake(self.xPos1, self.yPos, self.size, self.size)
+                }, completion: { animationFinished in
+//                    self.coloredSquare.removeFromSuperview()
+            })
+        }
+        
     }
 
 
