@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-//        makeSquare()
+        makeSquare()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +70,6 @@ class ViewController: UIViewController {
     
     @IBAction func onOffButtonClicked(sender: UISwitch) {
         if (onOffButton.on == true) {
-            makeSquare()
             moveSquare("right")
 //            onOffButton.on = false
         }
