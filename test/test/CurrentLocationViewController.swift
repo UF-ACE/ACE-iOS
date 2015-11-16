@@ -146,7 +146,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             } else {
                 let placemark = placemarks! as [CLPlacemark]
                 let locationName = placemark[0].name
-                print("@@@@THE LOCATION ISSsSSSSSSS", locationName)
                 self.addressLabel.text = locationName
                 self.addressLabel.sizeToFit()
                 

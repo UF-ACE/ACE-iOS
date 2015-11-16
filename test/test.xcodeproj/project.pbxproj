@@ -17,6 +17,7 @@
 		2789BD851BF7DA8C00BCB4B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789BD841BF7DA8C00BCB4B3 /* AboutViewController.swift */; };
 		2789BD871BF7DF7400BCB4B3 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789BD861BF7DF7400BCB4B3 /* CheckListViewController.swift */; };
 		2789BD891BF7E91400BCB4B3 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789BD881BF7E91400BCB4B3 /* CurrentLocationViewController.swift */; };
+		E12C3ABE1BFA897300BDAF4E /* NewToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C3ABD1BFA897300BDAF4E /* NewToDoItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2789BD841BF7DA8C00BCB4B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2789BD861BF7DF7400BCB4B3 /* CheckListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
 		2789BD881BF7E91400BCB4B3 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
+		E12C3ABD1BFA897300BDAF4E /* NewToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewToDoItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				2789BD581BF7CDCD00BCB4B3 /* ViewController.swift */,
 				2789BD841BF7DA8C00BCB4B3 /* AboutViewController.swift */,
 				2789BD861BF7DF7400BCB4B3 /* CheckListViewController.swift */,
+				E12C3ABD1BFA897300BDAF4E /* NewToDoItemViewController.swift */,
 				2789BD881BF7E91400BCB4B3 /* CurrentLocationViewController.swift */,
 				2789BD5A1BF7CDCD00BCB4B3 /* Main.storyboard */,
 				2789BD5D1BF7CDCD00BCB4B3 /* Assets.xcassets */,
@@ -202,6 +205,7 @@
 				TargetAttributes = {
 					2789BD521BF7CDCD00BCB4B3 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 53T6WGJL5K;
 					};
 					2789BD661BF7CDCD00BCB4B3 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -265,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12C3ABE1BFA897300BDAF4E /* NewToDoItemViewController.swift in Sources */,
 				2789BD851BF7DA8C00BCB4B3 /* AboutViewController.swift in Sources */,
 				2789BD891BF7E91400BCB4B3 /* CurrentLocationViewController.swift in Sources */,
 				2789BD871BF7DF7400BCB4B3 /* CheckListViewController.swift in Sources */,
@@ -409,10 +414,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BirdWing.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -420,10 +428,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BirdWing.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -494,6 +505,7 @@
 				2789BD7D1BF7CDCD00BCB4B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2789BD7E1BF7CDCD00BCB4B3 /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +514,7 @@
 				2789BD801BF7CDCD00BCB4B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2789BD811BF7CDCD00BCB4B3 /* Build configuration list for PBXNativeTarget "testUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +523,7 @@
 				2789BD831BF7CDCD00BCB4B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
