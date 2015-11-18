@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2783F5F91BFD29D100787622 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 2783F5F81BFD29D100787622 /* Audio */; };
 		2789BD571BF7CDCD00BCB4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789BD561BF7CDCD00BCB4B3 /* AppDelegate.swift */; };
 		2789BD591BF7CDCD00BCB4B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789BD581BF7CDCD00BCB4B3 /* ViewController.swift */; };
 		2789BD5C1BF7CDCD00BCB4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2789BD5A1BF7CDCD00BCB4B3 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2783F5F81BFD29D100787622 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		2789BD531BF7CDCD00BCB4B3 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2789BD561BF7CDCD00BCB4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2789BD581BF7CDCD00BCB4B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				2789BD881BF7E91400BCB4B3 /* CurrentLocationViewController.swift */,
 				2789BD5A1BF7CDCD00BCB4B3 /* Main.storyboard */,
 				2789BD5D1BF7CDCD00BCB4B3 /* Assets.xcassets */,
+				2783F5F81BFD29D100787622 /* Audio */,
 				2789BD5F1BF7CDCD00BCB4B3 /* LaunchScreen.storyboard */,
 				2789BD621BF7CDCD00BCB4B3 /* Info.plist */,
 			);
@@ -205,7 +208,7 @@
 				TargetAttributes = {
 					2789BD521BF7CDCD00BCB4B3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 53T6WGJL5K;
+						DevelopmentTeam = RFG59VNY29;
 					};
 					2789BD661BF7CDCD00BCB4B3 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -245,6 +248,7 @@
 				2789BD611BF7CDCD00BCB4B3 /* LaunchScreen.storyboard in Resources */,
 				2789BD5E1BF7CDCD00BCB4B3 /* Assets.xcassets in Resources */,
 				2789BD5C1BF7CDCD00BCB4B3 /* Main.storyboard in Resources */,
+				2783F5F91BFD29D100787622 /* Audio in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    var player: AVAudioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var slider: UISlider!
     var currentValue: Int = 50
@@ -33,6 +36,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         currentValue = lroundf(slider.value)
+        
+        let audioPath = NSBundle.mainBundle().pathForResource("Audio/01 Hello", ofType: "m4a")
+        var error:NSError? = nil
+        do {
+            player = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: audioPath!))
+        }
+        catch {
+            print("Something bad happened. Try catching specific errors to narrow things down")
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -46,21 +59,26 @@ class ViewController: UIViewController {
     
 //    This is a built in alert to UIKit
     @IBAction func showAlert() {
-        let message = "The value of the slider is now: \(currentValue)"
+        let message = "The value of the slider is now: \(currentValue) \n How many times did I call?"
         
 //        let alert = UIAlertController(title: "Hello, iOS Workshop", message: "Is this part 2?", preferredStyle: .Alert)
-        let alert = UIAlertController(title: "Hello, iOS Workshop", message: message, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Hello, it's me...", message: message, preferredStyle: .Alert)
         
-        let action1 = UIAlertAction(title: "No", style: .Destructive, handler: nil)
-        let action2 = UIAlertAction(title: "Yes", style: .Default, handler: nil)
+        let action1 = UIAlertAction(title: "None", style: .Destructive, handler: nil)
+        let action2 = UIAlertAction(title: "1000", style: .Default, handler: nil)
         
         alert.addAction(action1)
         alert.addAction(action2)
+        
+        player.play()
         
         presentViewController(alert, animated: true, completion: nil)
         
     }
     
+    @IBAction func stopMusic(sender: UIButton) {
+        player.stop()
+    }
 //    A simple action (method) with a UISloder being sent into it
     @IBAction func sliderMoved(slider: UISlider) {
 //        print("The value of the slider is now: \(slider.value)")

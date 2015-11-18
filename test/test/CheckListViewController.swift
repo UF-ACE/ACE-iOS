@@ -54,7 +54,7 @@ class CheckListViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // We want to sections, one for Items we need to do
+        // We want two sections, one for Items we need to do
         // and one for the items that are done
         return 2
     }
@@ -84,6 +84,14 @@ class CheckListViewController: UITableViewController {
         // Means it is in the "to do items" section
         if indexPath.section == 0 {
             label.text = arrayOfTodos[itemIndex];
+            
+//            If we wanted to directly assign text to a particular label
+//            if (itemIndex == 0) {
+//                label.text = "nick"
+//            }
+//            else if (itemIndex == 1) {
+//                label.text = "miller"
+//            }
         }
         // Otherwise, we are in the done section
         else {
@@ -102,6 +110,15 @@ class CheckListViewController: UITableViewController {
     
 //    This is our method when a cell is selected
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+//            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+//                if cell.accessoryType == .None {
+//                    cell.accessoryType = .Checkmark
+//                }
+//                else {
+//                    cell.accessoryType = .None
+//                }
+//            }
         
             // Means it is in the "to do items" section
             if indexPath.section == 0 {
