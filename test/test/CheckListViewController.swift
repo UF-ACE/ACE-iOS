@@ -54,7 +54,7 @@ class CheckListViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // We want to sections, one for Items we need to do
+        // We want two sections, one for Items we need to do
         // and one for the items that are done
         return 2
     }
