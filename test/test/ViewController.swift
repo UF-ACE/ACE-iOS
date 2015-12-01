@@ -37,7 +37,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         currentValue = lroundf(slider.value)
         
-        let audioPath = NSBundle.mainBundle().pathForResource("Audio/01 Hello", ofType: "m4a")
+//        let audioPath = NSBundle.mainBundle().pathForResource("Audio/01 Hello", ofType: "m4a")
+        let audioPath = NSBundle.mainBundle().pathForResource("Audio/cena", ofType: "mp3")
         var error:NSError? = nil
         do {
             player = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: audioPath!))
